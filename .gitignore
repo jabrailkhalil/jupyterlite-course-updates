@@ -1,0 +1,15 @@
+node_modules/
+lib/
+__pycache__/
+.pytest_cache/
+.venv/
+*.egg-info/
+build/
+dist/
+_site/
+artifacts/
+course_update/labextension/
+.cache/
+.build-input/
+playwright-report/
+test-results/

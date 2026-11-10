@@ -1,0 +1,5 @@
+release/licenses/** -text
+release/licenses/*.json text eol=lf
+release/LICENSE -text
+LICENSE -text
+docs/images/*.png binary

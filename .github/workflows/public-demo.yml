@@ -1,0 +1,308 @@
+name: Validate and optionally deploy the demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_demo:
+        description: Deploy the checked site to the preconfigured GitHub Pages environment
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: public-course-demo
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: ${{ github.repository == 'jabrailkhalil/jupyterlite-course-updates' && github.event.repository.private == false }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    env:
+      CI: "true"
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+      EXPECTED_PYODIDE_VERSION: "314.0.6"
+      BROWSER_IMAGE: mcr.microsoft.com/playwright:v1.65.0-noble@sha256:6e3fb709361521eb27161606e6da6d2674e5e89fa16516cb37d6fdd91372273d
+    steps:
+      - name: Require the approved public snapshot repository
+        env:
+          REPOSITORY: ${{ github.repository }}
+          REPOSITORY_PRIVATE: ${{ github.event.repository.private }}
+        run: |
+          test "$REPOSITORY" = jabrailkhalil/jupyterlite-course-updates
+          test "$REPOSITORY_PRIVATE" = false
+
+      - name: Check out the requested source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+
+      - name: Set up Node 24
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "24"
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12"
+
+      - name: Record the source and build environment
+        run: |
+          mkdir -p artifacts
+          git rev-parse HEAD > artifacts/source-head.txt
+          git status --porcelain=v1 > artifacts/source-status-before.txt
+          python --version | tee artifacts/python-version.txt
+          node --version | tee artifacts/node-version.txt
+          npm --version | tee artifacts/npm-version.txt
+          docker --version | tee artifacts/docker-version.txt
+
+      - name: Install the checked-in Python hash lock
+        run: |
+          test -f requirements.lock
+          python -m pip install --disable-pip-version-check uv==0.13.7 2>&1 | tee artifacts/uv-install.log
+          uv --version | tee artifacts/uv-version.txt
+          uv pip install --system --require-hashes --requirement requirements.lock 2>&1 | tee artifacts/python-install.log
+          python -m pip install --disable-pip-version-check . --no-deps --no-build-isolation 2>&1 | tee artifacts/addon-install.log
+          python -m pip freeze --all > artifacts/python-freeze.txt
+
+      - name: Install the checked-in npm lock
+        run: |
+          test -f package-lock.json
+          npm ci --no-audit --no-fund 2>&1 | tee artifacts/npm-install.log
+          sha256sum requirements.lock package-lock.json > artifacts/dependency-locks.sha256
+
+      - name: Build the portable Lab extension
+        run: npm run build 2>&1 | tee artifacts/extension-build.log
+
+      - name: Run independent unit tests
+        run: npm run test:unit 2>&1 | tee artifacts/unit.tap
+
+      - name: Prove the unit checks reject three faulty variants
+        run: node scripts/negative_controls.mjs 2>&1 | tee artifacts/unit-negative-controls.log
+
+      - name: Validate the notebook fixtures
+        run: |
+          python - <<'PY' 2>&1 | tee artifacts/fixture-validation.log
+          from pathlib import Path
+          import nbformat
+          paths = sorted(Path("fixtures/course-assets").rglob("*.ipynb"))
+          if len(paths) != 3:
+              raise AssertionError(f"Expected three notebook versions, found {paths}")
+          for path in paths:
+              nbformat.validate(nbformat.read(path, as_version=4))
+              print(f"Validated {path}")
+          PY
+
+      - name: Build the site with the pinned local runtime and notices
+        run: python scripts/build_site.py 2>&1 | tee artifacts/site-build.log
+
+      - name: Run the complete browser suite without external networking
+        timeout-minutes: 45
+        run: |
+          container="course-update-browser-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          docker pull "$BROWSER_IMAGE" 2>&1 | tee artifacts/docker-pull.log
+          docker image inspect "$BROWSER_IMAGE" > artifacts/browser-image-inspect.json
+          docker create \
+            --name "$container" --network none --ipc host \
+            --user "$(id -u):$(id -g)" \
+            --env HOME=/tmp/course-update-home --env CI=true \
+            --env EXPECTED_PYODIDE_VERSION="$EXPECTED_PYODIDE_VERSION" \
+            --volume "$GITHUB_WORKSPACE:/work" --workdir /work \
+            "$BROWSER_IMAGE" \
+            sh -lc 'mkdir -p "$HOME"; npm run test:browser -- --max-failures=1' \
+            > artifacts/browser-container-id.txt
+          docker inspect "$container" > artifacts/browser-container-before.json
+          set +e
+          docker start --attach "$container" 2>&1 | tee artifacts/browser.log
+          attach_status=${PIPESTATUS[0]}
+          docker inspect "$container" > artifacts/browser-container-after.json
+          container_status=$(docker inspect --format '{{.State.ExitCode}}' "$container")
+          docker rm "$container" > artifacts/browser-container-cleanup.txt
+          set -e
+          printf 'attach=%s\ncontainer=%s\n' "$attach_status" "$container_status" > artifacts/browser-exit-status.txt
+          test "$attach_status" -eq 0
+          test "$container_status" -eq 0
+
+      - name: Prove browser checks reject removed freshness guards
+        run: python scripts/browser_negative_control.py
+
+      - name: Verify the main suite and dependency provenance
+        run: python scripts/validate_artifacts.py 2>&1 | tee artifacts/artifact-validation.log
+
+      - name: Prove the subpath and Service Worker fallback without COOP or COEP
+        timeout-minutes: 8
+        run: |
+          container="course-pages-offline-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          docker create \
+            --name "$container" --network none --ipc host \
+            --user "$(id -u):$(id -g)" \
+            --env HOME=/tmp/course-pages-home --env CI=true \
+            --env HTTP_BASE_PATH=/jupyterlite-course-updates --env HTTP_NO_COI=true \
+            --env PAGES_BASE_URL=http://127.0.0.1:4173/jupyterlite-course-updates/ \
+            --env EXPECTED_PYODIDE_VERSION="$EXPECTED_PYODIDE_VERSION" \
+            --volume "$GITHUB_WORKSPACE:/work" --workdir /work \
+            "$BROWSER_IMAGE" \
+            sh -lc 'mkdir -p "$HOME"; npm exec playwright test -- --config playwright.pages.config.mjs' \
+            > artifacts/pages-container-id.txt
+          docker inspect "$container" > artifacts/pages-container-before.json
+          set +e
+          docker start --attach "$container" 2>&1 | tee artifacts/pages-browser.log
+          attach_status=${PIPESTATUS[0]}
+          docker inspect "$container" > artifacts/pages-container-after.json
+          container_status=$(docker inspect --format '{{.State.ExitCode}}' "$container")
+          docker rm "$container" > artifacts/pages-container-cleanup.txt
+          set -e
+          test "$attach_status" -eq 0
+          test "$container_status" -eq 0
+
+      - name: Audit the public snapshot and redistributed notices
+        run: python scripts/release_audit.py --site _site --public-source --require-pages-smoke 2>&1 | tee artifacts/release-audit.log
+
+      - name: Package the local HTTP build and diagnostics
+        if: always()
+        run: |
+          mkdir -p artifacts
+          git status --porcelain=v1 > artifacts/source-status-after.txt
+          python - <<'PY'
+          from pathlib import Path
+          import json
+          import zipfile
+          root = Path.cwd()
+          site = root / "_site"
+          if site.is_dir():
+              with zipfile.ZipFile("artifacts/course-site.zip", "w", zipfile.ZIP_DEFLATED) as archive:
+                  for path in sorted(site.rglob("*")):
+                      if path.is_file():
+                          archive.write(path, path.relative_to(root).as_posix())
+                  for name in ("scripts/serve_site.mjs", "README.md", "VALIDATION.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "requirements.lock", "package-lock.json"):
+                      path = root / name
+                      if path.is_file():
+                          archive.write(path, name)
+                  for path in sorted((root / "docs" / "images").glob("*.png")):
+                      archive.write(path, path.relative_to(root).as_posix())
+                  for name in ("validation-summary.json", "release-audit.json", "pages-evidence.json"):
+                      path = root / "artifacts" / name
+                      if path.is_file():
+                          archive.write(path, name)
+          Path("artifacts/site-archive-status.json").write_text(json.dumps({
+              "sitePresent": site.is_dir(),
+              "completeBuildEvidencePresent": (site / "build-evidence.json").is_file(),
+              "validationSummaryPresent": Path("artifacts/validation-summary.json").is_file(),
+              "releaseAuditPresent": Path("artifacts/release-audit.json").is_file(),
+              "runLocally": "node scripts/serve_site.mjs",
+              "url": "http://127.0.0.1:4173/lab/index.html"
+          }, indent=2) + "\n", encoding="utf-8")
+          PY
+
+      - name: Upload validation evidence and the local HTTP build
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: course-update-validation-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            artifacts/
+            requirements.lock
+            package-lock.json
+            _site/build-evidence.json
+          if-no-files-found: warn
+          retention-days: 14
+          compression-level: 0
+
+      - name: Upload the fully tested Pages site
+        if: ${{ success() && inputs.publish_demo }}
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
+        with:
+          path: _site
+          retention-days: "1"
+
+  deploy:
+    if: ${{ inputs.publish_demo && github.ref == 'refs/heads/main' }}
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Read the preconfigured Pages target
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
+        with:
+          enablement: "false"
+      - name: Deploy the checked artifact
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e
+
+  hosted-smoke:
+    needs: deploy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    env:
+      CI: "true"
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+      EXPECTED_PYODIDE_VERSION: "314.0.6"
+      PAGES_BASE_URL: ${{ needs.deploy.outputs.page_url }}
+      BROWSER_IMAGE: mcr.microsoft.com/playwright:v1.65.0-noble@sha256:6e3fb709361521eb27161606e6da6d2674e5e89fa16516cb37d6fdd91372273d
+    steps:
+      - name: Check out the tested source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Set up Node 24
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: "24"
+      - name: Install the exact browser test dependencies
+        run: |
+          mkdir -p artifacts
+          npm ci --no-audit --no-fund
+      - name: Check the deployed origin in a fresh browser profile
+        run: |
+          case "$PAGES_BASE_URL" in
+            https://jabrailkhalil.github.io/jupyterlite-course-updates|https://jabrailkhalil.github.io/jupyterlite-course-updates/) ;;
+            *) echo "Unexpected Pages origin: $PAGES_BASE_URL" >&2; exit 1 ;;
+          esac
+          node --input-type=module - <<'JS'
+          const base = process.env.PAGES_BASE_URL.replace(/\/?$/, '/');
+          const expected = process.env.GITHUB_SHA;
+          let ready = false;
+          for (let attempt = 0; attempt < 30; attempt++) {
+            try {
+              const response = await fetch(`${base}build-evidence.json?commit=${expected}`, { cache: 'no-store' });
+              if (response.ok && (await response.json()).sourceCommit === expected) { ready = true; break; }
+            } catch {}
+            await new Promise(resolve => setTimeout(resolve, 2000));
+          }
+          if (!ready) throw new Error('The deployed site did not expose the tested source commit');
+          JS
+          docker pull "$BROWSER_IMAGE"
+          docker run --rm --network bridge --ipc host \
+            --user "$(id -u):$(id -g)" \
+            --env HOME=/tmp/course-hosted-home --env CI=true \
+            --env PAGES_BASE_URL="$PAGES_BASE_URL" \
+            --env EXPECTED_PYODIDE_VERSION="$EXPECTED_PYODIDE_VERSION" \
+            --volume "$GITHUB_WORKSPACE:/work" --workdir /work \
+            "$BROWSER_IMAGE" \
+            sh -lc 'mkdir -p "$HOME"; npm exec playwright test -- --config playwright.pages.config.mjs' \
+            2>&1 | tee artifacts/hosted-pages.log
+      - name: Upload actual hosted smoke evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pages-hosted-smoke-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/
+          if-no-files-found: error
+          retention-days: 14

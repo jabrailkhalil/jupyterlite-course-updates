@@ -1,0 +1,111 @@
+.jp-CourseUpdate {
+  --cu-ink:#202b43; --cu-muted:#626f86; --cu-accent:#4654c8; --cu-border:#dfe4ee;
+  --cu-paper:#fff; --cu-soft:#f6f7fc; --cu-add:#e4f4eb; --cu-add-ink:#236844;
+  --cu-remove:#fbe9ed; --cu-remove-ink:#984151; --cu-warn:#98651b;
+  box-sizing:border-box; overflow:auto; padding:24px 28px 0;
+  background:var(--cu-paper); color:var(--cu-ink); font:13px/1.55 var(--jp-ui-font-family);
+}
+.jp-CourseUpdate *, .jp-CourseUpdate *::before, .jp-CourseUpdate *::after { box-sizing:border-box; }
+.jp-CourseUpdate [hidden] { display:none !important; }
+.jp-CourseUpdate-header { padding-bottom:18px; }
+.jp-CourseUpdate-eyebrow { color:var(--cu-accent); font-size:10px; font-weight:750; letter-spacing:.15em; }
+.jp-CourseUpdate h2 { margin:6px 0; font-size:25px; letter-spacing:-.65px; font-weight:650; line-height:1.3; }
+.jp-CourseUpdate-header p { margin:0; color:var(--cu-muted); }
+.jp-CourseUpdate-file { display:flex; flex-wrap:wrap; gap:7px 16px; align-items:center; margin-top:12px; font-size:11px; color:var(--cu-muted); }
+.jp-CourseUpdate-file > span:first-child { font-weight:650; color:var(--cu-ink); }
+.jp-CourseUpdate-safe { color:var(--cu-add-ink); background:var(--cu-add); border-radius:5px; padding:2px 7px; }
+.jp-CourseUpdate-safe::before { content:'✓ '; font-weight:700; }
+.jp-CourseUpdate-progress { display:flex; list-style:none; gap:20px; margin:0; padding:13px 0; border-block:1px solid var(--cu-border); color:var(--cu-muted); font-size:11px; }
+.jp-CourseUpdate-progress li { display:flex; align-items:center; gap:7px; }
+.jp-CourseUpdate-progress li > span { width:22px; height:22px; border:1px solid var(--cu-border); border-radius:50%; text-align:center; line-height:20px; }
+.jp-CourseUpdate-progress [data-state=current] { color:var(--cu-accent); font-weight:650; }
+.jp-CourseUpdate-progress [data-state=current] > span { background:var(--cu-accent); color:#fff; border-color:var(--cu-accent); }
+.jp-CourseUpdate-progress [data-state=done] > span { color:var(--cu-add-ink); background:var(--cu-add); border-color:transparent; }
+.jp-CourseUpdate-controls { display:flex; align-items:end; gap:10px; margin:18px 0; }
+.jp-CourseUpdate-controls > label { display:grid; gap:5px; color:var(--cu-muted); font-size:11px; font-weight:550; min-width:190px; }
+.jp-CourseUpdate button,.jp-CourseUpdate select { font:inherit; color:var(--cu-ink); background:var(--cu-paper); border:1px solid var(--cu-border); border-radius:6px; padding:8px 13px; min-height:35px; cursor:pointer; }
+.jp-CourseUpdate select { width:100%; font-size:12px; }
+.jp-CourseUpdate button:hover:enabled { background:var(--cu-soft); border-color:var(--cu-accent); }
+.jp-CourseUpdate button:focus-visible,.jp-CourseUpdate select:focus-visible,.jp-CourseUpdate input:focus-visible,.jp-CourseUpdate summary:focus-visible { outline:3px solid #7984eb; outline-offset:3px; }
+.jp-CourseUpdate button:disabled { opacity:.45; cursor:default; }
+.jp-CourseUpdate button.jp-CourseUpdate-primary { color:#fff; background:var(--cu-accent); border-color:var(--cu-accent); font-weight:600; }
+.jp-CourseUpdate button.jp-CourseUpdate-primary:hover:enabled { background:#3542ab; }
+.jp-CourseUpdate-summary { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:12px 0; }
+.jp-CourseUpdate-summary > div { display:flex; gap:10px; align-items:center; background:var(--cu-soft); border:1px solid var(--cu-border); border-radius:7px; padding:9px 12px; }
+.jp-CourseUpdate-summary > div > span:first-child { font-size:20px; line-height:1.2; font-weight:650; }
+.jp-CourseUpdate-summary > div > span:last-child { font-size:11px; color:var(--cu-muted); }
+.jp-CourseUpdate-summary > div:last-child { border-color:#e5cca8; background:#fff9ee; color:var(--cu-warn); }
+.jp-CourseUpdate-summary[data-ready=true] > div:last-child { border-color:#bfdfcd; background:var(--cu-add); color:var(--cu-add-ink); }
+.jp-CourseUpdate-status { font-size:12px; margin:12px 0; border-left:3px solid var(--cu-accent); padding:8px 12px; background:var(--cu-soft); }
+.jp-CourseUpdate-status[data-tone=warning] { border-color:#ca933e; background:#fff9ee; color:#79521a; }
+.jp-CourseUpdate-status[data-tone=success] { border-color:#4a9468; background:var(--cu-add); color:var(--cu-add-ink); }
+.jp-CourseUpdate-legend { display:flex; flex-wrap:wrap; gap:12px; margin:12px 0 8px; font-size:10px; color:var(--cu-muted); }
+.jp-CourseUpdate-legend > span:first-child { color:var(--cu-add-ink); }
+.jp-CourseUpdate-legend > span:last-child { color:var(--cu-remove-ink); }
+.jp-CourseUpdate-cell { border:1px solid var(--cu-border); border-radius:9px; margin:12px 0 16px; overflow:hidden; background:var(--cu-paper); }
+.jp-CourseUpdate-cell[data-state=conflict] { border-color:#d9ae6c; }
+.jp-CourseUpdate-cellHeader { display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 14px; border-bottom:1px solid var(--cu-border); }
+.jp-CourseUpdate h3 { font-size:13px; line-height:1.5; margin:0; font-weight:650; }
+.jp-CourseUpdate-badge { border-radius:4px; padding:2px 7px; font-size:10px; font-weight:600; background:var(--cu-soft); color:var(--cu-muted); }
+.jp-CourseUpdate-badge[data-kind=course] { background:#ecedff; color:var(--cu-accent); }
+.jp-CourseUpdate-badge[data-kind=learner] { background:#e9f1fb; color:#355d91; }
+.jp-CourseUpdate-badge[data-kind=conflict] { background:#fff2da; color:var(--cu-warn); }
+.jp-CourseUpdate-panes { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); }
+.jp-CourseUpdate-pane { min-width:0; padding:10px 0 6px; }
+.jp-CourseUpdate-pane + .jp-CourseUpdate-pane { border-left:1px solid var(--cu-border); }
+.jp-CourseUpdate h4 { color:var(--cu-muted); font-size:10px; font-weight:650; margin:0 12px 8px; }
+.jp-CourseUpdate pre { margin:0; padding:0; white-space:normal; font:12px/1.65 var(--jp-code-font-family); min-width:0; color:var(--cu-ink); }
+.jp-CourseUpdate-line { display:grid; grid-template-columns:36px minmax(0,1fr); min-height:21px; padding-right:10px; }
+.jp-CourseUpdate-lineText { white-space:pre-wrap; overflow-wrap:anywhere; min-width:0; tab-size:4; }
+.jp-CourseUpdate-gutter { display:grid; grid-template-columns:1fr 9px; gap:2px; padding-right:5px; color:#7a869c; user-select:none; font-size:10px; text-align:right; }
+.jp-CourseUpdate-gutter::before { content:attr(data-number); }
+.jp-CourseUpdate-gutter::after { content:attr(data-sign); font-weight:700; }
+.jp-CourseUpdate-line[data-change=added] { background:var(--cu-add); }
+.jp-CourseUpdate-line[data-change=added] .jp-CourseUpdate-gutter { color:var(--cu-add-ink); }
+.jp-CourseUpdate-line[data-change=removed] { background:var(--cu-remove); }
+.jp-CourseUpdate-line[data-change=removed] .jp-CourseUpdate-gutter { color:var(--cu-remove-ink); }
+.jp-CourseUpdate fieldset { display:flex; flex-wrap:wrap; gap:8px; margin:12px 14px; border:0; padding:0; }
+.jp-CourseUpdate legend { margin-bottom:8px; padding:0; color:var(--cu-muted); font-size:11px; }
+.jp-CourseUpdate-choice { display:inline-flex; align-items:center; gap:7px; border:1px solid var(--cu-border); border-radius:6px; padding:7px 10px; cursor:pointer; font-size:12px; }
+.jp-CourseUpdate-choice[data-selected=true] { background:#efeffc; color:var(--cu-accent); border-color:var(--cu-accent); }
+.jp-CourseUpdate input[type=radio] { accent-color:var(--cu-accent); margin:0; }
+.jp-CourseUpdate-choice:has(input:disabled) { cursor:default; }
+.jp-CourseUpdate-result { margin:12px 14px; border:1px solid #c7dfd2; border-radius:6px; background:var(--cu-paper); overflow:hidden; }
+.jp-CourseUpdate-resultHeader { display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px; padding:7px 10px; background:#f0f7f3; border-bottom:1px solid #d5e7dd; }
+.jp-CourseUpdate-resultHeader h4 { margin:0; color:var(--cu-add-ink); }
+.jp-CourseUpdate-resultHeader > span { color:var(--cu-muted); font-size:10px; }
+.jp-CourseUpdate-result pre { padding:6px 0; }
+.jp-CourseUpdate-result pre[data-pending=true] { color:var(--cu-muted); padding:12px; font:12px/1.5 var(--jp-ui-font-family); }
+.jp-CourseUpdate-receipt:empty { display:none; }
+.jp-CourseUpdate-receipt { margin:16px 0; border:1px solid #b8d8c6; border-radius:8px; padding:16px; background:#f0f8f3; scroll-margin-bottom:100px; }
+.jp-CourseUpdate-receipt p { margin:5px 0 12px; color:var(--cu-muted); }
+.jp-CourseUpdate-receipt details { margin-top:12px; font-size:11px; color:var(--cu-muted); }
+.jp-CourseUpdate-receipt summary { cursor:pointer; }
+.jp-CourseUpdate-receipt code { display:block; margin-top:8px; overflow-wrap:anywhere; }
+.jp-CourseUpdate-actions { position:sticky; bottom:0; z-index:1; display:flex; align-items:center; justify-content:space-between; gap:12px; margin:20px -28px 0; padding:14px 28px; border-top:1px solid var(--cu-border); background:var(--cu-paper); }
+.jp-CourseUpdate-actions p { font-size:11px; color:var(--cu-muted); margin:0; }
+.jp-CourseUpdate-actions > div { display:flex; gap:8px; flex-shrink:0; }
+body[data-jp-theme-light=false] .jp-CourseUpdate { --cu-ink:#e4e9f3; --cu-muted:#a8b4c8; --cu-accent:#a4adff; --cu-border:#3d4658; --cu-paper:#252c3a; --cu-soft:#2d3546; --cu-add:#253e35; --cu-add-ink:#a7dcbc; --cu-remove:#4a2f3b; --cu-remove-ink:#f2b5c3; --cu-warn:#e9c38b; }
+body[data-jp-theme-light=false] .jp-CourseUpdate button.jp-CourseUpdate-primary { color:#1f2544; }
+body[data-jp-theme-light=false] .jp-CourseUpdate-badge, body[data-jp-theme-light=false] .jp-CourseUpdate-choice[data-selected=true] { background:var(--cu-soft); }
+body[data-jp-theme-light=false] .jp-CourseUpdate-resultHeader, body[data-jp-theme-light=false] .jp-CourseUpdate-receipt { background:var(--cu-add); border-color:var(--cu-border); }
+body[data-jp-theme-light=false] .jp-CourseUpdate-summary > div:last-child, body[data-jp-theme-light=false] .jp-CourseUpdate-status[data-tone=warning] { background:#40392b; color:var(--cu-warn); }
+@media(max-width:1000px) {
+  .jp-CourseUpdate { padding:18px 18px 0; }
+  .jp-CourseUpdate h2 { font-size:22px; }
+  .jp-CourseUpdate-progress { gap:12px; }
+  .jp-CourseUpdate-panes { grid-template-columns:1fr; }
+  .jp-CourseUpdate-pane + .jp-CourseUpdate-pane { border-left:0; border-top:1px solid var(--cu-border); }
+  .jp-CourseUpdate-actions { margin-inline:-18px; padding-inline:18px; flex-wrap:wrap; }
+  .jp-CourseUpdate-summary > div { padding:8px; gap:6px; }
+}
+@media(max-width:540px) {
+  .jp-CourseUpdate { padding:14px 12px 0; }
+  .jp-CourseUpdate-progress { gap:8px; font-size:10px; flex-wrap:wrap; }
+  .jp-CourseUpdate-controls { flex-wrap:wrap; }
+  .jp-CourseUpdate-controls > label { min-width:150px; flex:1; }
+  .jp-CourseUpdate-summary { gap:5px; }
+  .jp-CourseUpdate-summary > div { flex-direction:column; align-items:start; }
+  .jp-CourseUpdate-summary > div > span:last-child { font-size:10px; }
+  .jp-CourseUpdate-actions { margin-inline:-12px; padding-inline:12px; }
+}

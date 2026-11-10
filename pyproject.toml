@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling==1.28.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jupyterlite-course-update-lab"
+version = "0.1.0"
+description = "Review course notebook updates while keeping learner work"
+license = "BSD-3-Clause"
+license-files = ["release/LICENSE"]
+requires-python = ">=3.12"
+dependencies = ["jupyterlite-core==0.8.7"]
+classifiers = ["Private :: Do Not Upload"]
+
+[project.entry-points."jupyterlite.addon.v0"]
+course_update = "course_update.addon:CourseUpdateAddon"
+
+[tool.hatch.build.targets.wheel]
+packages = ["course_update"]

@@ -1,0 +1,370 @@
+{
+  "schemaVersion": 1,
+  "wheels": [
+    {
+      "component": "ipykernel",
+      "version": "6.9.2",
+      "wheelFile": "extensions/@jupyterlite/pyodide-kernel-extension/static/pypi/ipykernel-6.9.2-py3-none-any.whl",
+      "wheelSha256": "f2025883bf63ff134911c4ff7e916adec6f341f705046a39ddc98a74ba25afa7",
+      "url": "https://files.pythonhosted.org/packages/f3/fc/fc65ef07ea7f42ec2f9919bb79249bbc13d8c2e0c42ab715f0e5e1f20a3d/jupyterlite_pyodide_kernel-0.8.7-py3-none-any.whl",
+      "licenseMetadata": null,
+      "embeddedLicenses": [
+        {
+          "path": "python/ipykernel-6.9.2/ipykernel-6.9.2.dist-info/licenses/LICENSE",
+          "archivePath": "ipykernel-6.9.2.dist-info/licenses/LICENSE",
+          "sha256": "72f505e9912fbaceeb5bfe807537516670d2488bb4917bf20f85ffe7c617e61d"
+        }
+      ]
+    },
+    {
+      "component": "piplite",
+      "version": "0.8.7",
+      "wheelFile": "extensions/@jupyterlite/pyodide-kernel-extension/static/pypi/piplite-0.8.7-py3-none-any.whl",
+      "wheelSha256": "635dc43eb18b8c006095bbc2af0d0b972499b88f1587c48ae4baffa6b5323bcd",
+      "url": "https://files.pythonhosted.org/packages/f3/fc/fc65ef07ea7f42ec2f9919bb79249bbc13d8c2e0c42ab715f0e5e1f20a3d/jupyterlite_pyodide_kernel-0.8.7-py3-none-any.whl",
+      "licenseMetadata": "BSD-3-Clause",
+      "embeddedLicenses": [
+        {
+          "path": "python/piplite-0.8.7/piplite-0.8.7.dist-info/licenses/LICENSE",
+          "archivePath": "piplite-0.8.7.dist-info/licenses/LICENSE",
+          "sha256": "72f505e9912fbaceeb5bfe807537516670d2488bb4917bf20f85ffe7c617e61d"
+        }
+      ]
+    },
+    {
+      "component": "pyodide-kernel",
+      "version": "0.8.7",
+      "wheelFile": "extensions/@jupyterlite/pyodide-kernel-extension/static/pypi/pyodide_kernel-0.8.7-py3-none-any.whl",
+      "wheelSha256": "b6621f9268d93956248cb956305cb46322eb298e1c2f55c8314fc620de658632",
+      "url": "https://files.pythonhosted.org/packages/f3/fc/fc65ef07ea7f42ec2f9919bb79249bbc13d8c2e0c42ab715f0e5e1f20a3d/jupyterlite_pyodide_kernel-0.8.7-py3-none-any.whl",
+      "licenseMetadata": "BSD-3-Clause",
+      "embeddedLicenses": [
+        {
+          "path": "python/pyodide-kernel-0.8.7/pyodide_kernel-0.8.7.dist-info/licenses/LICENSE",
+          "archivePath": "pyodide_kernel-0.8.7.dist-info/licenses/LICENSE",
+          "sha256": "72f505e9912fbaceeb5bfe807537516670d2488bb4917bf20f85ffe7c617e61d"
+        }
+      ]
+    },
+    {
+      "component": "widgetsnbextension",
+      "version": "3.6.999",
+      "wheelFile": "extensions/@jupyterlite/pyodide-kernel-extension/static/pypi/widgetsnbextension-3.6.999-py3-none-any.whl",
+      "wheelSha256": "71d98d1f9799fd393aeda674e459f7fe489117e43ce5268af1d3362a33b93a82",
+      "url": "https://files.pythonhosted.org/packages/f3/fc/fc65ef07ea7f42ec2f9919bb79249bbc13d8c2e0c42ab715f0e5e1f20a3d/jupyterlite_pyodide_kernel-0.8.7-py3-none-any.whl",
+      "licenseMetadata": "BSD-3-Clause",
+      "embeddedLicenses": [
+        {
+          "path": "python/widgetsnbextension-3.6.999/widgetsnbextension-3.6.999.dist-info/licenses/LICENSE",
+          "archivePath": "widgetsnbextension-3.6.999.dist-info/licenses/LICENSE",
+          "sha256": "72f505e9912fbaceeb5bfe807537516670d2488bb4917bf20f85ffe7c617e61d"
+        }
+      ]
+    },
+    {
+      "component": "widgetsnbextension",
+      "version": "4.0.999",
+      "wheelFile": "extensions/@jupyterlite/pyodide-kernel-extension/static/pypi/widgetsnbextension-4.0.999-py3-none-any.whl",
+      "wheelSha256": "592aac36274aaa3abb1b89091c21c0df969ac9c372e1ad8c63041fea37bbdac6",
+      "url": "https://files.pythonhosted.org/packages/f3/fc/fc65ef07ea7f42ec2f9919bb79249bbc13d8c2e0c42ab715f0e5e1f20a3d/jupyterlite_pyodide_kernel-0.8.7-py3-none-any.whl",
+      "licenseMetadata": "BSD-3-Clause",
+      "embeddedLicenses": [
+        {
+          "path": "python/widgetsnbextension-4.0.999/widgetsnbextension-4.0.999.dist-info/licenses/LICENSE",
+          "archivePath": "widgetsnbextension-4.0.999.dist-info/licenses/LICENSE",
+          "sha256": "72f505e9912fbaceeb5bfe807537516670d2488bb4917bf20f85ffe7c617e61d"
+        }
+      ]
+    },
+    {
+      "component": "comm",
+      "version": "0.2.3",
+      "wheelFile": "pypi/comm-0.2.3-py3-none-any.whl",
+      "wheelSha256": "c615d91d75f7f04f095b30d1c1711babd43bdc6419c1be9886a85f2f4e489417",
+      "url": "https://files.pythonhosted.org/packages/60/97/891a0971e1e4a8c5d2b20bbe0e524dc04548d2307fee33cdeba148fd4fc7/comm-0.2.3-py3-none-any.whl",
+      "licenseMetadata": "BSD 3-Clause License",
+      "embeddedLicenses": [
+        {
+          "path": "python/comm-0.2.3/comm-0.2.3.dist-info/licenses/LICENSE",
+          "archivePath": "comm-0.2.3.dist-info/licenses/LICENSE",
+          "sha256": "97a7e0a142b7c1dcd26461b20fc13980988b4449b7446ed776928826fd2ca9c4"
+        }
+      ]
+    },
+    {
+      "component": "asttokens",
+      "version": "3.0.1",
+      "wheelFile": "static/pyodide/asttokens-3.0.1-py3-none-any.whl",
+      "wheelSha256": "17d8be9e2f37492162ad731c2599fc9291653bb313651ae15227e8012b58ef2f",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/asttokens-3.0.1-py3-none-any.whl",
+      "licenseMetadata": "Apache 2.0",
+      "embeddedLicenses": [
+        {
+          "path": "python/asttokens-3.0.1/asttokens-3.0.1.dist-info/licenses/LICENSE",
+          "archivePath": "asttokens-3.0.1.dist-info/licenses/LICENSE",
+          "sha256": "62fb8a3a9621dc2388174caaabe9c2317b694bb9a1d46c98bcf5655b68f51be3"
+        }
+      ]
+    },
+    {
+      "component": "decorator",
+      "version": "5.2.1",
+      "wheelFile": "static/pyodide/decorator-5.2.1-py3-none-any.whl",
+      "wheelSha256": "70c5b218495d55cd610752b01dc3d9f593dfd720bec271b5bebe4d86b51ae3c0",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/decorator-5.2.1-py3-none-any.whl",
+      "licenseMetadata": "BSD-2-Clause",
+      "embeddedLicenses": [
+        {
+          "path": "python/decorator-5.2.1/decorator-5.2.1.dist-info/LICENSE.txt",
+          "archivePath": "decorator-5.2.1.dist-info/LICENSE.txt",
+          "sha256": "914ee6ed78a5efc173bda698f2708444ca9d140fcc4080c60d0503d40db39da6"
+        }
+      ]
+    },
+    {
+      "component": "executing",
+      "version": "2.2.1",
+      "wheelFile": "static/pyodide/executing-2.2.1-py2.py3-none-any.whl",
+      "wheelSha256": "38cc37f2fe6b804a260a9f058cde84d3ea977d7a4b1cf17be7a3e80ddcdd06e0",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/executing-2.2.1-py2.py3-none-any.whl",
+      "licenseMetadata": "MIT",
+      "embeddedLicenses": [
+        {
+          "path": "python/executing-2.2.1/executing-2.2.1.dist-info/LICENSE.txt",
+          "archivePath": "executing-2.2.1.dist-info/LICENSE.txt",
+          "sha256": "a476a2cb0ef4c41450340a577a28b91ac4c7f669136b2ee148047fabd5fc4181"
+        }
+      ]
+    },
+    {
+      "component": "ipython",
+      "version": "9.12.0",
+      "wheelFile": "static/pyodide/ipython-9.12.0-py3-none-any.whl",
+      "wheelSha256": "31c0bc0d219ac5efb97c3d3284be1f66300621331b944a2fafd175b3495e408a",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/ipython-9.12.0-py3-none-any.whl",
+      "licenseMetadata": "BSD-3-Clause",
+      "embeddedLicenses": [
+        {
+          "path": "python/ipython-9.12.0/ipython-9.12.0.dist-info/licenses/COPYING.rst",
+          "archivePath": "ipython-9.12.0.dist-info/licenses/COPYING.rst",
+          "sha256": "341afcbd729887b7046fe7b98fc4f4edff3aed8d38f06eefd9b30670f043df17"
+        },
+        {
+          "path": "python/ipython-9.12.0/ipython-9.12.0.dist-info/licenses/LICENSE",
+          "archivePath": "ipython-9.12.0.dist-info/licenses/LICENSE",
+          "sha256": "e0e390748ed440ab893ca1f135a88a920aaf5409dbb90a5b427c75c5e51268fb"
+        }
+      ]
+    },
+    {
+      "component": "jedi",
+      "version": "0.19.2",
+      "wheelFile": "static/pyodide/jedi-0.19.2-py2.py3-none-any.whl",
+      "wheelSha256": "cb1adff438e7d12cf11cf14323641db73498097a36c3bfc89b89e6350e203e70",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/jedi-0.19.2-py2.py3-none-any.whl",
+      "licenseMetadata": "MIT",
+      "embeddedLicenses": [
+        {
+          "path": "python/jedi-0.19.2/jedi/third_party/django-stubs/LICENSE.txt",
+          "archivePath": "jedi/third_party/django-stubs/LICENSE.txt",
+          "sha256": "235e993965d399a25e7d493d25c8622f78718510884b9c051f1f1866b6f34e9d"
+        },
+        {
+          "path": "python/jedi-0.19.2/jedi/third_party/typeshed/LICENSE",
+          "archivePath": "jedi/third_party/typeshed/LICENSE",
+          "sha256": "b41b78f562a2e65b75cab44354335f6f435d4ef73065509600ac910cf4e22fe0"
+        },
+        {
+          "path": "python/jedi-0.19.2/jedi-0.19.2.dist-info/AUTHORS.txt",
+          "archivePath": "jedi-0.19.2.dist-info/AUTHORS.txt",
+          "sha256": "d0b472b36617b4af87481671338dd649139e5c619090937ba317c98bed2bbff2"
+        },
+        {
+          "path": "python/jedi-0.19.2/jedi-0.19.2.dist-info/LICENSE.txt",
+          "archivePath": "jedi-0.19.2.dist-info/LICENSE.txt",
+          "sha256": "78e60cd0b8f28694f30195482c33d76908d846b0d15278deb7332aa22ba8e412"
+        }
+      ]
+    },
+    {
+      "component": "matplotlib-inline",
+      "version": "0.2.1",
+      "wheelFile": "static/pyodide/matplotlib_inline-0.2.1-py3-none-any.whl",
+      "wheelSha256": "71f6069bbd521ba4f2c2ab3e78952d67e2951c5bbbd5c34655818246ff505af6",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/matplotlib_inline-0.2.1-py3-none-any.whl",
+      "licenseMetadata": null,
+      "embeddedLicenses": [
+        {
+          "path": "python/matplotlib-inline-0.2.1/matplotlib_inline-0.2.1.dist-info/licenses/LICENSE",
+          "archivePath": "matplotlib_inline-0.2.1.dist-info/licenses/LICENSE",
+          "sha256": "8521b036c6448e0e0aa7213d4713b6fdee0f4c64c9f320450f77346bf5c0e8e4"
+        }
+      ]
+    },
+    {
+      "component": "micropip",
+      "version": "0.11.1",
+      "wheelFile": "static/pyodide/micropip-0.11.1-py3-none-any.whl",
+      "wheelSha256": "0ad7104a3cde648e5486a718799f3852f1d782ff19d4bfc13db9dc631df083f8",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/micropip-0.11.1-py3-none-any.whl",
+      "licenseMetadata": "Mozilla Public License Version 2.0",
+      "embeddedLicenses": [
+        {
+          "path": "python/micropip-0.11.1/micropip/_vendored/packaging/LICENSE",
+          "archivePath": "micropip/_vendored/packaging/LICENSE",
+          "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+        },
+        {
+          "path": "python/micropip-0.11.1/micropip/_vendored/packaging/LICENSE.APACHE",
+          "archivePath": "micropip/_vendored/packaging/LICENSE.APACHE",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+        },
+        {
+          "path": "python/micropip-0.11.1/micropip/_vendored/packaging/LICENSE.BSD",
+          "archivePath": "micropip/_vendored/packaging/LICENSE.BSD",
+          "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+        },
+        {
+          "path": "python/micropip-0.11.1/micropip-0.11.1.dist-info/licenses/LICENSE",
+          "archivePath": "micropip-0.11.1.dist-info/licenses/LICENSE",
+          "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+        }
+      ]
+    },
+    {
+      "component": "parso",
+      "version": "0.8.6",
+      "wheelFile": "static/pyodide/parso-0.8.6-py2.py3-none-any.whl",
+      "wheelSha256": "759953027815d4cd9c3cfbc677ff58da463ea311d830dbe59ba63df85e32ff49",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/parso-0.8.6-py2.py3-none-any.whl",
+      "licenseMetadata": "MIT",
+      "embeddedLicenses": [
+        {
+          "path": "python/parso-0.8.6/parso-0.8.6.dist-info/licenses/AUTHORS.txt",
+          "archivePath": "parso-0.8.6.dist-info/licenses/AUTHORS.txt",
+          "sha256": "4830a0bbc85794105c8cf3f2513f92296db4fc83363315bef7984a15a448ab22"
+        },
+        {
+          "path": "python/parso-0.8.6/parso-0.8.6.dist-info/licenses/LICENSE.txt",
+          "archivePath": "parso-0.8.6.dist-info/licenses/LICENSE.txt",
+          "sha256": "fa67973073753d17624caf8684d5ee816d70c89d912c5bca7ca0f08e7b150edb"
+        }
+      ]
+    },
+    {
+      "component": "prompt_toolkit",
+      "version": "3.0.52",
+      "wheelFile": "static/pyodide/prompt_toolkit-3.0.52-py3-none-any.whl",
+      "wheelSha256": "baec31bee7497706f62615fd1f4a0adcc3ac07aaa428c605898e385417e0e500",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/prompt_toolkit-3.0.52-py3-none-any.whl",
+      "licenseMetadata": null,
+      "embeddedLicenses": [
+        {
+          "path": "python/prompt-toolkit-3.0.52/prompt_toolkit-3.0.52.dist-info/licenses/AUTHORS.rst",
+          "archivePath": "prompt_toolkit-3.0.52.dist-info/licenses/AUTHORS.rst",
+          "sha256": "d3dc62c6bc8436658495ab89aea37511e7fa9391d282657239c9cfb80dbd42e5"
+        },
+        {
+          "path": "python/prompt-toolkit-3.0.52/prompt_toolkit-3.0.52.dist-info/licenses/LICENSE",
+          "archivePath": "prompt_toolkit-3.0.52.dist-info/licenses/LICENSE",
+          "sha256": "303574d9bdd85c757d6025017942bf17baeedf2778f62bd7f425d07d880f4c4a"
+        }
+      ]
+    },
+    {
+      "component": "pure_eval",
+      "version": "0.2.3",
+      "wheelFile": "static/pyodide/pure_eval-0.2.3-py3-none-any.whl",
+      "wheelSha256": "51497667f5fae6668334b841e6c3aa090ab1f64c1c649395d60c648a8d4b7b1c",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/pure_eval-0.2.3-py3-none-any.whl",
+      "licenseMetadata": "MIT",
+      "embeddedLicenses": [
+        {
+          "path": "python/pure-eval-0.2.3/pure_eval-0.2.3.dist-info/LICENSE.txt",
+          "archivePath": "pure_eval-0.2.3.dist-info/LICENSE.txt",
+          "sha256": "a476a2cb0ef4c41450340a577a28b91ac4c7f669136b2ee148047fabd5fc4181"
+        }
+      ]
+    },
+    {
+      "component": "Pygments",
+      "version": "2.20.0",
+      "wheelFile": "static/pyodide/pygments-2.20.0-py3-none-any.whl",
+      "wheelSha256": "30f3c928127039f39462e3690c2e0ff03977c5ee1766df0a1e9bad09a377ae8e",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/pygments-2.20.0-py3-none-any.whl",
+      "licenseMetadata": "BSD-2-Clause",
+      "embeddedLicenses": [
+        {
+          "path": "python/Pygments-2.20.0/pygments-2.20.0.dist-info/licenses/AUTHORS",
+          "archivePath": "pygments-2.20.0.dist-info/licenses/AUTHORS",
+          "sha256": "0db603a5f4499f690c4425477ff664c166da325d3acc3b5a8d4de3db072443d0"
+        },
+        {
+          "path": "python/Pygments-2.20.0/pygments-2.20.0.dist-info/licenses/LICENSE",
+          "archivePath": "pygments-2.20.0.dist-info/licenses/LICENSE",
+          "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17"
+        }
+      ]
+    },
+    {
+      "component": "six",
+      "version": "1.17.0",
+      "wheelFile": "static/pyodide/six-1.17.0-py2.py3-none-any.whl",
+      "wheelSha256": "29edb1e328c61cad6ac21a2ff92c7d274a2b662eb7c12b2d147f04917b765ad6",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/six-1.17.0-py2.py3-none-any.whl",
+      "licenseMetadata": "MIT",
+      "embeddedLicenses": [
+        {
+          "path": "python/six-1.17.0/six-1.17.0.dist-info/LICENSE",
+          "archivePath": "six-1.17.0.dist-info/LICENSE",
+          "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0"
+        }
+      ]
+    },
+    {
+      "component": "stack-data",
+      "version": "0.6.3",
+      "wheelFile": "static/pyodide/stack_data-0.6.3-py3-none-any.whl",
+      "wheelSha256": "05d35330361a91dd9f64df8a9fc33d0a60d5df0c931c75efe6a915bfca45724e",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/stack_data-0.6.3-py3-none-any.whl",
+      "licenseMetadata": "MIT",
+      "embeddedLicenses": [
+        {
+          "path": "python/stack-data-0.6.3/stack_data-0.6.3.dist-info/LICENSE.txt",
+          "archivePath": "stack_data-0.6.3.dist-info/LICENSE.txt",
+          "sha256": "a476a2cb0ef4c41450340a577a28b91ac4c7f669136b2ee148047fabd5fc4181"
+        }
+      ]
+    },
+    {
+      "component": "traitlets",
+      "version": "5.14.3",
+      "wheelFile": "static/pyodide/traitlets-5.14.3-py3-none-any.whl",
+      "wheelSha256": "b767faf502b685952680136221f7c65792bb801ec5b2ed310b865e3c3b083b82",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/traitlets-5.14.3-py3-none-any.whl",
+      "licenseMetadata": "BSD 3-Clause License",
+      "embeddedLicenses": [
+        {
+          "path": "python/traitlets-5.14.3/traitlets-5.14.3.dist-info/licenses/LICENSE",
+          "archivePath": "traitlets-5.14.3.dist-info/licenses/LICENSE",
+          "sha256": "2f51727d9063b54856773cb51388bdb79f2936ee4a1b692ef553d8c4201311ab"
+        }
+      ]
+    },
+    {
+      "component": "wcwidth",
+      "version": "0.6.0",
+      "wheelFile": "static/pyodide/wcwidth-0.6.0-py3-none-any.whl",
+      "wheelSha256": "28ff3daf700aeabd06f3f4db9ff6827b5da337e1f889fc7ae52dabbcd5eccf5e",
+      "url": "https://cdn.jsdelivr.net/pyodide/v314.0.6/full/wcwidth-0.6.0-py3-none-any.whl",
+      "licenseMetadata": "MIT",
+      "embeddedLicenses": [
+        {
+          "path": "python/wcwidth-0.6.0/wcwidth-0.6.0.dist-info/licenses/LICENSE",
+          "archivePath": "wcwidth-0.6.0.dist-info/licenses/LICENSE",
+          "sha256": "70b98a95a2144eb70af8017fa8c6d95ce247e40867436e8bc649e137fe13d21a"
+        }
+      ]
+    }
+  ]
+}

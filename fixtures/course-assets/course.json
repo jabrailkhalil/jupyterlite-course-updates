@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "courseId": "sum-course",
+  "base": {
+    "version": "1",
+    "url": "v1/lesson.ipynb"
+  },
+  "updates": [
+    {
+      "version": "2",
+      "label": "Updated instructions",
+      "url": "v2/lesson.ipynb"
+    },
+    {
+      "version": "3",
+      "label": "Worked example",
+      "url": "v3/lesson.ipynb"
+    }
+  ]
+}

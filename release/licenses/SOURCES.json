@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "path": "jupyterlite-0.8.7-LICENSE.txt",
+      "component": "JupyterLite",
+      "version": "0.8.7",
+      "url": "https://github.com/jupyterlite/jupyterlite/blob/v0.8.7/LICENSE",
+      "sha256": "574f8a9cab1ec418be4a8e00ba19d0629446a5b47d182f821331a6b09f2326dd",
+      "gitBlob": "d4360fc54deb0d88422c101670cb517c6acd39e9"
+    },
+    {
+      "path": "jupyterlab-4.6.5-LICENSE.txt",
+      "component": "JupyterLab",
+      "version": "4.6.5",
+      "url": "https://github.com/jupyterlab/jupyterlab/blob/v4.6.5/LICENSE",
+      "sha256": "56b2e89eae0571033d778a9790872f17ee219c723b826399052522ddb94b2853",
+      "gitBlob": "5df16e6eb196ff092e4c7413e9a218fe3705f25c"
+    },
+    {
+      "path": "notebook-7.6.4-LICENSE.txt",
+      "component": "Jupyter Notebook",
+      "version": "7.6.4",
+      "url": "https://github.com/jupyter/notebook/blob/v7.6.4/LICENSE",
+      "sha256": "5ca74e4d2eeb9330b0d129c25f874d3544a13413bc62ae8d367819100d095072",
+      "gitBlob": "076177a497fae1482179137af028465c4f6b9c94"
+    },
+    {
+      "path": "pyodide-314.0.6-LICENSE.txt",
+      "component": "Pyodide",
+      "version": "314.0.6",
+      "url": "https://github.com/pyodide/pyodide/blob/314.0.6/LICENSE",
+      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5",
+      "gitBlob": "a612ad9813b006ce81d1ee438dd784da99a54007"
+    },
+    {
+      "path": "cpython-3.14.2-LICENSE.txt",
+      "component": "CPython",
+      "version": "3.14.2",
+      "url": "https://github.com/python/cpython/blob/v3.14.2/LICENSE",
+      "sha256": "b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231",
+      "gitBlob": "20cf39097c68baa17cc566b64e76d34ebf034044"
+    },
+    {
+      "path": "cpython-3.14.2-incorporated-software.rst",
+      "component": "CPython incorporated software",
+      "version": "3.14.2",
+      "url": "https://github.com/python/cpython/blob/v3.14.2/Doc/license.rst",
+      "sha256": "c695d550b135e53e38807e76496d1db17d22c40e461d1f3f354c86188d3305dd",
+      "gitBlob": "480414bb84c4f294a4feddf704692494eb251eb0"
+    },
+    {
+      "path": "emscripten-5.0.3-LICENSE.txt",
+      "component": "Emscripten",
+      "version": "5.0.3",
+      "url": "https://github.com/emscripten-core/emscripten/blob/5.0.3/LICENSE",
+      "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86",
+      "gitBlob": "70cabe388d27da221bd769c50b427a35354f4f1d"
+    },
+    {
+      "path": "pyodide-stackframe-LICENSE.txt",
+      "component": "Pyodide vendored stackframe",
+      "version": "314.0.6",
+      "url": "https://github.com/pyodide/pyodide/blob/314.0.6/src/js/vendor/stackframe/LICENSE",
+      "sha256": "899da9d991cb211a3642b84e82a9ae0b4b4e44546fd207e34d7d4ec2eb40f420",
+      "gitBlob": "5c09f1a02595993feb91c69cd67eddac2bbfd45b"
+    },
+    {
+      "path": "OFL-1.1.txt",
+      "component": "SIL Open Font License canonical text",
+      "version": "1.1",
+      "url": "https://github.com/spdx/license-list-data/blob/v3.27.0/text/OFL-1.1.txt",
+      "sha256": "8eea8287e5876b539670cadb82e99f9a7afddec6f6730811be1daf25d2e9bcfd",
+      "gitBlob": "6fe84ee21ebe5d2b54dc63b53b4d5c404c083409"
+    },
+    {
+      "path": "CC-BY-4.0.txt",
+      "component": "Creative Commons Attribution canonical text",
+      "version": "4.0",
+      "url": "https://github.com/spdx/license-list-data/blob/v3.27.0/text/CC-BY-4.0.txt",
+      "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+      "gitBlob": "13ca539f377dc705af32b8d2ce89262298ea2f06"
+    },
+    {
+      "path": "lumino-widgets-2.8.0-LICENSE.txt",
+      "component": "@lumino/widgets",
+      "version": "2.8.0",
+      "url": "https://github.com/jupyterlab/lumino/blob/main/LICENSE",
+      "sha256": "b0da99e8c73e7fdad117622971e6d16379fd01b5d0b60589de7133b6fec59422",
+      "gitBlob": "4deeecccad0f479806f18ec53ace8e98c75b7b0a",
+      "sourceCommit": "main",
+      "registryGitHead": null
+    },
+    {
+      "path": "jupyter-ydoc-4.0.0-LICENSE.txt",
+      "component": "@jupyter/ydoc",
+      "version": "4.0.0",
+      "url": "https://github.com/jupyter-server/jupyter_ydoc/blob/main/LICENSE",
+      "sha256": "76aa61b056e19e5ccf2bb56591ceba65cee0ecf4be7b57659f4ec65c85691424",
+      "gitBlob": "d6663907203c89d5c0252f30992f89457d25f693",
+      "sourceCommit": "main",
+      "registryGitHead": null
+    },
+    {
+      "path": "jupyter-react-components-0.17.1-LICENSE.txt",
+      "component": "@jupyter/react-components",
+      "version": "0.17.1",
+      "url": "https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/blob/main/LICENSE",
+      "sha256": "6ec2d5d8aa9ea9bba384e53bdb7d401721a861bbafb5dce9e0a4de5ebdcd71fc",
+      "gitBlob": "4643ba48533ce7ca4dcb37701bf93af9364d4bf4",
+      "sourceCommit": "main",
+      "registryGitHead": null
+    },
+    {
+      "path": "jupyter-web-components-0.17.1-LICENSE.txt",
+      "component": "@jupyter/web-components",
+      "version": "0.17.1",
+      "url": "https://github.com/jupyterlab-contrib/jupyter-ui-toolkit/blob/main/LICENSE",
+      "sha256": "6ec2d5d8aa9ea9bba384e53bdb7d401721a861bbafb5dce9e0a4de5ebdcd71fc",
+      "gitBlob": "4643ba48533ce7ca4dcb37701bf93af9364d4bf4",
+      "sourceCommit": "main",
+      "registryGitHead": null
+    },
+    {
+      "path": "microsoft-fast-element-1.12.0-LICENSE.txt",
+      "component": "@microsoft/fast-element",
+      "version": "1.12.0",
+      "url": "https://github.com/Microsoft/fast/blob/a29696c6c5e90d0e5e6121146628c188d95736d0/LICENSE",
+      "sha256": "efd3e2455191853bb2fb22f794e521f9097f4e95c9327c2a34be53fb172a2d5a",
+      "gitBlob": "630e2d95d5e51d5ab224989b3161d930e22f35e4",
+      "sourceCommit": "a29696c6c5e90d0e5e6121146628c188d95736d0",
+      "registryGitHead": "a29696c6c5e90d0e5e6121146628c188d95736d0"
+    },
+    {
+      "path": "microsoft-fast-foundation-2.49.5-LICENSE.txt",
+      "component": "@microsoft/fast-foundation",
+      "version": "2.49.5",
+      "url": "https://github.com/Microsoft/fast/blob/aed89cac2414d10223f158ed2d0a1185a2461fdd/LICENSE",
+      "sha256": "efd3e2455191853bb2fb22f794e521f9097f4e95c9327c2a34be53fb172a2d5a",
+      "gitBlob": "630e2d95d5e51d5ab224989b3161d930e22f35e4",
+      "sourceCommit": "aed89cac2414d10223f158ed2d0a1185a2461fdd",
+      "registryGitHead": "aed89cac2414d10223f158ed2d0a1185a2461fdd"
+    },
+    {
+      "path": "microsoft-fast-web-utilities-5.4.1-LICENSE.txt",
+      "component": "@microsoft/fast-web-utilities",
+      "version": "5.4.1",
+      "url": "https://github.com/Microsoft/fast/blob/c49a98f7f1bd8e167b0b7a96a181990f9a675f34/LICENSE",
+      "sha256": "efd3e2455191853bb2fb22f794e521f9097f4e95c9327c2a34be53fb172a2d5a",
+      "gitBlob": "630e2d95d5e51d5ab224989b3161d930e22f35e4",
+      "sourceCommit": "c49a98f7f1bd8e167b0b7a96a181990f9a675f34",
+      "registryGitHead": "c49a98f7f1bd8e167b0b7a96a181990f9a675f34"
+    },
+    {
+      "path": "json-schema-merge-allof-0.8.1-README.md",
+      "component": "json-schema-merge-allof",
+      "version": "0.8.1",
+      "url": "https://github.com/mokkabonna/json-schema-merge-allof/blob/24a6be01020d231131d42e116eeec871db373289/README.md",
+      "sha256": "8b64522562a56cd1c4392fbe3237f59aeba3b9bfb8c41349b0827cbef6b11ab0",
+      "gitBlob": "b79f7670a50630efeb921412e42223be7e36a481",
+      "note": "Upstream README includes the original MIT copyright notice; no separate LICENSE exists at this source commit."
+    },
+    {
+      "path": "vega-lite-5.14.1-LICENSE.txt",
+      "component": "vega-lite",
+      "version": "5.14.1",
+      "url": "https://registry.npmjs.org/vega-lite/-/vega-lite-5.14.1.tgz",
+      "sourceArchive": {
+        "url": "git+https://github.com/vega/vega-lite.git",
+        "type": "git"
+      },
+      "archiveIntegrity": "sha512-VFvi0QtUoLQqwfAXTGjo0Acw/OTjiK3zOrcO/HyksGnnNDBHWM1GTcFryiWZYoAi99ehvv7tI/q94O46+fGRSQ==",
+      "archivePath": "package/LICENSE",
+      "sha256": "f618900fd0d64046963b29f40590cdd1e341a2f41449f99110d82fd81fea808c"
+    },
+    {
+      "path": "vega-util-1.17.4-LICENSE.txt",
+      "component": "vega-util",
+      "version": "1.17.4",
+      "url": "https://github.com/vega/vega/blob/fe508bbd2973445a35a8730701eaca45339233a8/LICENSE",
+      "sha256": "63727832aaf62004a2b249c933e327f3c90caf49e41a72f4bf436edf632cbda8",
+      "gitBlob": "eb5c50a9300fa45ff5ec16332f16ae49e74b742f",
+      "sourceCommit": "fe508bbd2973445a35a8730701eaca45339233a8",
+      "registryGitHead": "fe508bbd2973445a35a8730701eaca45339233a8"
+    },
+    {
+      "path": "elkjs-0.9.3-LICENSE.txt",
+      "component": "elkjs",
+      "version": "0.9.3",
+      "url": "https://registry.npmjs.org/elkjs/-/elkjs-0.9.3.tgz",
+      "sourceArchive": {
+        "url": "git+https://github.com/kieler/elkjs.git",
+        "type": "git"
+      },
+      "archiveIntegrity": "sha512-f/ZeWvW/BCXbhGEf1Ujp29EASo/lk1FDnETgNKwJrsVvGZhUWCZyg3xLJjAsxfOmt8KjswHmI5EwCQcPMpOYhQ==",
+      "archivePath": "package/LICENSE.md",
+      "sha256": "89591d4578fb1ebd91501312a3d25f021bd865a2e436641c1cf7b1bc7e3c1617"
+    },
+    {
+      "path": "fortawesome-fontawesome-free-5.15.4-LICENSE.txt",
+      "component": "@fortawesome/fontawesome-free",
+      "version": "5.15.4",
+      "url": "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.4.tgz",
+      "sourceArchive": {
+        "url": "git+https://github.com/FortAwesome/Font-Awesome.git",
+        "type": "git"
+      },
+      "archiveIntegrity": "sha512-eYm8vijH/hpzr/6/1CJ/V/Eb1xQFW2nnUKArb3z+yUWv7HTwj6M7SP957oMjfZjAHU6qpoNc2wQvIxBLWYa/Jg==",
+      "archivePath": "package/LICENSE.txt",
+      "sha256": "e779748dfe75e84f974df3c7bc07f842011a100159158b0f1f49b2f2a5a515cb"
+    },
+    {
+      "path": "MIT.txt",
+      "component": "MIT canonical license text",
+      "version": "MIT",
+      "url": "https://github.com/spdx/license-list-data/blob/v3.27.0/text/MIT.txt",
+      "sha256": "b05785f9f18e6716bab63424b11454513b9943a222595b70411009202fc592b5",
+      "gitBlob": "d817195dad53ec992418c28ffca5fbd1cd86502a"
+    },
+    {
+      "path": "emscripten-musl-COPYRIGHT.txt",
+      "component": "musl bundled in Emscripten",
+      "version": "5.0.3",
+      "url": "https://github.com/emscripten-core/emscripten/blob/5.0.3/system/lib/libc/musl/COPYRIGHT",
+      "sha256": "f9bc4423732350eb0b3f7ed7e91d530298476f8fec0c6c427a1c04ade22655af",
+      "gitBlob": "c1628e9ac84f927fe791124ec172fb61c760bb9b"
+    },
+    {
+      "path": "libffi-LICENSE.txt",
+      "component": "libffi",
+      "version": "f08493d249d2067c8b3207ba46693dd858f95db3",
+      "url": "https://github.com/libffi/libffi/blob/f08493d249d2067c8b3207ba46693dd858f95db3/LICENSE",
+      "sha256": "2c9c2acb9743e6b007b91350475308aee44691d96aa20eacef8e199988c8c388",
+      "gitBlob": "75d1bce11f9118ccfd96b24a2e49af078da1b469"
+    },
+    {
+      "path": "hiwire-LICENSE.txt",
+      "component": "hiwire",
+      "version": "6a1e67280a15d929ebeceee54a6358c9c8d5f697",
+      "url": "https://github.com/pyodide/hiwire/blob/6a1e67280a15d929ebeceee54a6358c9c8d5f697/LICENSE",
+      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5",
+      "gitBlob": "a612ad9813b006ce81d1ee438dd784da99a54007"
+    },
+    {
+      "path": "xz-5.2.2-COPYING.txt",
+      "component": "XZ/liblzma",
+      "version": "5.2.2",
+      "url": "https://github.com/xz-mirror/xz/blob/v5.2.2/COPYING",
+      "sha256": "c4f8e14fafe458d84808a4cd8b69f94673ebe2bf8fc992291629a69ac12218f8",
+      "gitBlob": "43c90d0598c55ab9f4edeb1781cdf5c549ca567e"
+    },
+    {
+      "path": "zstd-1.5.7-LICENSE.txt",
+      "component": "Zstandard",
+      "version": "1.5.7",
+      "url": "https://github.com/python/cpython-source-deps/blob/zstd-1.5.7/LICENSE",
+      "sha256": "7055266497633c9025b777c78eb7235af13922117480ed5c674677adc381c9d8",
+      "gitBlob": "75800288cc243f164b9d130f125e2ffae28f8e39"
+    },
+    {
+      "path": "bzip2-1.0.6-LICENSE.txt",
+      "component": "bzip2",
+      "version": "1.0.6",
+      "url": "https://github.com/emscripten-ports/bzip2/blob/1.0.6/LICENSE",
+      "sha256": "4919cfb14a73cd64fcef67b107613970cf1659a09aa675dba31314f373bc7204",
+      "gitBlob": "cc614178cf79580e04671c4d6acfbe95028b1842"
+    },
+    {
+      "path": "zlib-1.3.1-LICENSE.txt",
+      "component": "zlib",
+      "version": "1.3.1",
+      "url": "https://github.com/madler/zlib/blob/v1.3.1/LICENSE",
+      "sha256": "845efc77857d485d91fb3e0b884aaa929368c717ae8186b66fe1ed2495753243",
+      "gitBlob": "ab8ee6f71428c3e4646b12b64ad387cde33462e5"
+    },
+    {
+      "path": "sqlite-3.39.0-dedication.txt",
+      "component": "SQLite",
+      "version": "3.39.0",
+      "url": "https://github.com/sqlite/sqlite/blob/version-3.39.0/LICENSE.md",
+      "sha256": "9c6479123f32a1ed50d9a0af203dfe8972e65035b0cdeef436b5f8d0924517fe",
+      "gitBlob": "f68a6c175f0b72086c313a9dbd9f2ec8d87525dd"
+    }
+  ]
+}
