@@ -15,7 +15,7 @@ I am a [visiting lecturer at HSE University](https://www.hse.ru/org/persons/1214
 3. **Updated instructions** changes the exercise and keeps the answer. **Worked example** also changes the answer cell, so you choose which version to keep.
 4. Check **Updated copy preview**, then select **Create updated copy**.
 
-The new notebook is saved separately. The original and all three reviewed versions are kept. Changing, saving or moving the original after preview requires a fresh review. Changed code loses its old outputs and execution count.
+The new notebook is saved separately. The original and all three reviewed versions are kept. Changes to the original content or path after preview require a fresh review. Changed code loses its old outputs and execution count.
 
 ![The selected answer in the updated copy preview](docs/images/review-resolved.png)
 

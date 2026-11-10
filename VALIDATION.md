@@ -1,6 +1,6 @@
 # Validation
 
-The v0.1.0 release workflow requires all of these checks before deployment:
+The v0.1.0 release workflow requires these checks:
 
 - Extension build and strict TypeScript compilation.
 - 31 independent unit tests: merge rules, line highlighting and the native Atomics synchronous-return witness.
